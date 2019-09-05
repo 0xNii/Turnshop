@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>T U R N S H O P | PS-recovery</title>  
+<link rel="icon" href="{% static 'css+images/images/book.png' %}"> 
+<link rel="stylesheet" href="{% static 'css+images/base_style.css' %}"> 
+<link rel="stylesheet" href="{% static 'Fonts/css/all.min.css' %}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}">
+</script>
+<script>
+$(document).ready(function(){
+
+$(".reset-field label").click(function(){
+$(this).next().focus();
+})
+
+$(".reset-field input").focus(function() {
+$(this).css({"border-color":"purple","box-shadow":"0 1px 2px 0 rgba(0,0,0,0.2)"})
+$(this).prev().css({"color":"purple","opacity":1,"top":"-9px","font-size":"12px"})
+})
+
+$(".reset-field input").blur(function(){
+var label = $(this).prev()
+$(this).css({"border-color":"#ddd","box-shadow":""})
+var x = $(this).val();
+if(x == "") {
+label.css({"top":"11px","opacity":0.4,"color":"black","font-size":"13px"}); 
+}
+
+else {
+label.css({"top":"-9px","opacity":1,"color":"black","font-size":"12px"});
+}
+
+})
+
+});
+</script>
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+<div class="parallax">
+
+<div class="sub-form">
+<form action="/subscribe" method="POST">
+    {% csrf_token %}
+<input type="email" name="email" placeholder="ENTER E-MAIL ADDRESS">
+<div class="agree">By submitting this form, you agree to receive news,and special offers from Turnshop.
+You will receive newsletters and related information to keep you updated.
+<button type="submit" class="subscribe" title="Subscribe to TURNSHOP newsletters">SUBSCRIBE</button>
+</div>
+
+</form>
+
+</div>
+
+<div class="soc-media">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-reddit"></i></a>
+</div>
+
+<div class="confidential">
+<a href="#">Copyright Turnshop</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms & Conditions</a>
+</div>
+
+</div>
+
+</body>
+
+</html>
