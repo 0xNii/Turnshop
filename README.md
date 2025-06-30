@@ -1,2 +1,3 @@
 # Turnshop
-An Django library web application
+A Django app
+By Michael Lamptey
