@@ -1,2 +1,2 @@
 # Turnshop
-An online library web application
+An Django library web application
