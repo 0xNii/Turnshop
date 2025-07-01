@@ -1,0 +1,2 @@
+1. Download a code editor
+2. Install extensions like prettier
