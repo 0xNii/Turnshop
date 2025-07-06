@@ -1,0 +1,13 @@
+# Ignore all .idea files by default
+.idea/*
+
+# Except these (only share necessary project settings with your team)
+!.idea/codeStyles
+!.idea/runConfigurations
+!.idea/inspectionProfiles
+
+# Ignore WebStorm's personal configs
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+.idea/dictionaries
